@@ -18,12 +18,9 @@ jobs:
 
       - name: Setup
         run: |
-          # install current version of inkscape
           sudo apt-get update -q
-          # curl for download, dbus-x11 fixes a lot of warnings from inkscape that
           # cluttered the log
           sudo apt-get install curl lcdf-typetools -y
-          inkscape --version
 
           # install texlive
           pip install https://github.com/MaxNoe/texlive-batch-installation/archive/master.tar.gz
