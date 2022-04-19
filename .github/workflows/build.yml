@@ -27,7 +27,7 @@ jobs:
           install_texlive -t $TEXLIVE_VERSION --collection='-a' --package-file tex-packages.txt -p $HOME/.local/texlive -v
           echo "$HOME/.local/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
 
-      - name: Install Montserrat Font
+      - name: Run build
         run: |
           curl -Lo $HOME/montserrat.zip https://fonts.google.com/download?family=Montserrat
           mkdir -p $HOME/.local/share/fonts
@@ -45,7 +45,6 @@ jobs:
           echo "otfinfo -a $HOME/.local/share/fonts/static/Montserrat-Regular.ttf"
           otfinfo -a $HOME/.local/share/fonts/static/Montserrat-Regular.ttf
 
-      - name: Build
-        run: |
+          echo "Which lualatex"
           which lualatex
           lualatex test.tex
